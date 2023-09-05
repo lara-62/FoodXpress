@@ -16,11 +16,11 @@ function Cart(props) {
     changeCount(count-1)
    }
     return (
-        <div className="cartContainer">
+        <div className="cartContainer" >
             <div className="foodinfo">
             <div className="description">
-                    <div>{props.cartinfo.foodname}</div>
-                    <div>{props.cartinfo.Restaurantname}</div>
+                    <div className="foodName">{props.cartinfo.foodname}</div>
+                    <div className="fooddescription">{props.cartinfo.Restaurantname}</div>
                 </div>
                 <div className="foodImage">
                     <img src="https://img.freepik.com/free-photo/double-hamburger-isolated-white-background-fresh-burger-fast-food-with-beef-cream-cheese_90220-1192.jpg?w=2000" alt="" />
@@ -30,7 +30,7 @@ function Cart(props) {
             <div className="MoneyPlusChangeitemNumber">
             <div className="showMoney"> Tk. {props.cartinfo.MoneyperPiece}</div>
             <div className="itemChange">
-            <button className="removeadd" onClick={decrease}><Remove /></button><span className="itemNumber">{count}</span><button className="removeadd" onClick={increase}><Add /></button>
+            <button className="removeadd" onClick={decrease}><Remove style={{height:"1rem",width:"1rem"}} /></button><span className="itemNumber">{count}</span><button className="removeadd" onClick={increase}><Add style={{height:"1rem",width:"1rem"}}/></button>
             </div>
             </div>
         </div>

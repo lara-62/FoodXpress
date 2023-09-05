@@ -44,8 +44,8 @@ function Rightbar(props)
            
           {props.CartArray.map(fetch_cart)}
            <hr className="dividecart"/>
-           <div>
-           <div>Sub Total</div>           
+           <div className="showtotalMoney">
+           <div >Sub Total</div>           
            <div>Tk.500</div>
            </div>
            <button className="checkoutbutton"> <span className="arrowsign"> Checkout </span><ArrowForward /></button>

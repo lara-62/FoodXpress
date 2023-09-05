@@ -27,7 +27,7 @@ const Cartinfo=
 
 ];
 
- const Restaurantinfo=
+const Restaurantinfo=
 {
   "success": true,
   "data": [
@@ -170,5 +170,10 @@ const Cartinfo=
 }
 ;
 
-export default {Cartinfo,Restaurantinfo};
+const hehe = {
+  "Cartinfo" : Cartinfo,
+  "Restaurantinfo" : Restaurantinfo
+}
+
+export default hehe;
 

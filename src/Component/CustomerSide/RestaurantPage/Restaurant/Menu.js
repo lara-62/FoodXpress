@@ -1,56 +1,46 @@
 import React from "react"
 import "./menu.css"
 import Food from "../../../Food/Food";
-function Menu()
-{
-    return(<div className="menu">
-           <div className="scrollitem">
-            <div className="navfood">
-               
-                   <a href="#burger" className="navitem">
-                    Burger
-                   </a> 
-                   <a href="#pizza" className="navitem">
-                    Pizza
-                   </a>
+
+function navitemlist(items) {
+      return (<a href={"#"+items.category.replace(/ /g, '')} className="navitem">
+            
+            {items.category}
+      </a>
+      )
+}
+function foodinCategory(items) {
+      return (
+            <Food data={items} />
+      )
+}
+function categorylist(items) {
+      return (
+            <section id={items.category.replace(/ /g, '')} className="foodshow">
+                  <div className="category">
+                        {items.category}
+                  </div>
+                  <div className="foodshow">
+                        {items.items.map(foodinCategory)}
+                  </div>
+
+            </section>
+      )
+}
+
+function Menu(props) {
+      return (<div className="menu">
+            <div className="scrollitem">
+                  <div className="navfood">
+                        {props.data.map(navitemlist)}
+                  </div>
+
             </div>
 
-           </div>
-
-           <div className="categorylist">
-           <section id="burger" className="foodshow">
-            <div className="category">
-            Burger
+            <div className="categorylist">
+                  {props.data.map(categorylist)}
             </div>
-            <div className="foodshow">
-                  <Food />
-                  <Food />
-                  <Food />
-                  <Food />
-                  <Food />
-                  <Food />
-                  <Food />
-                  <Food />
-            </div>
-                 
-           </section>
-           <section id="pizza" className="foodshow" >
-           <div className="category">
-            Pizza
-            </div>
-            <div className="foodshow">
-                  <Food />
-                  <Food />
-                  <Food />
-                  <Food />
-                  <Food />
-                  <Food />
-                  <Food />
-                  <Food />
-            </div>
-           </section>
-           </div>
-    </div>)
+      </div>)
 }
 
 export default Menu;
